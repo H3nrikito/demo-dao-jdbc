@@ -93,7 +93,7 @@ public class SellerDaoJDBC implements SellerDao {
 	}
 
 	@Override
-	public List<Seller> findByDepartmen(Department department) {
+	public List<Seller> findByDepartment(Department department) {
 		PreparedStatement st = null;
 		ResultSet rs = null;
 		try {
@@ -117,11 +117,11 @@ public class SellerDaoJDBC implements SellerDao {
 				if (dep == null) {
 					dep = instantiateDepartment(rs);
 					map.put(rs.getInt("DepartmentId"), dep);
-											
+				}
+				
 				Seller obj = instantiateSeller(rs, dep);
 				list.add(obj);
-				}
-							}
+			}
 			return list;
 		}
 			

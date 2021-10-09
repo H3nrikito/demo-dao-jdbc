@@ -104,8 +104,6 @@ public class SellerDaoJDBC implements SellerDao {
 			if(rows == 0) { //if opcional para verificar se alguma linha foi deletada na base
 				throw new DbException("No one rows ");
 			}
-			
-			
 		}
 		catch(SQLException e){
 			throw new DbException(e.getMessage());
@@ -113,9 +111,6 @@ public class SellerDaoJDBC implements SellerDao {
 		finally {
 			DB.closeStatement(st);
 		}
-		
-	
-
 	}
 
 	@Override

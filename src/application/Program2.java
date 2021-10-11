@@ -30,11 +30,15 @@ public class Program2 {
 				
 		System.out.println("\n=== TEST 3: Department insert ===");
 		Department dep = new Department(null, "Gamers");
-		departmentDao.insert(dep);
+		//departmentDao.insert(dep);
 		System.out.println("Inserted! New id = " + dep.getId());
 				
-		//System.out.println("\n=== TEST 5: Department update ===");
-		
+		System.out.println("\n=== TEST 4: Department update ===");
+		department = departmentDao.findById(5);
+		department.setName("DepE");
+		departmentDao.update(department);
+		System.out.println("Update completed!");
+		System.out.println(department);
 		
 		//System.out.println("\n=== TEST 6: Department delete ===");
 		

@@ -58,7 +58,24 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 
 	@Override
 	public void update(Department obj) {
-
+		PreparedStatement st = null;
+		
+		try {
+			st = conn.prepareStatement("UPDATE department SET Id = ?, Name = ? WHERE Name = 'DepD' ");
+			
+			st.setInt(1, obj.getId());
+			st.setString(2, obj.getName());
+			//st.setString(3, obj.getName()); ---ATENÇÃO--VERIFICAR COMO O PROFESSOR RESOLVEU O 'WHERE NAME = ?'
+			
+			st.executeUpdate();
+			
+		}
+		catch (SQLException e) {
+			throw new DbException(e.getMessage());
+		}
+		finally {
+			DB.closeStatement(st);
+		}
 	}
 
 	@Override

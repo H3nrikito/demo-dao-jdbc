@@ -27,7 +27,6 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 	public void insert(Department obj) {
 		
 		PreparedStatement st = null;
-				
 		try {
 			st = conn.prepareStatement("INSERT INTO department (Name) VALUES (?)", Statement.RETURN_GENERATED_KEYS);
 			
@@ -61,12 +60,11 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 		PreparedStatement st = null;
 		
 		try {
-			st = conn.prepareStatement("UPDATE department SET Id = ?, Name = ? WHERE Name = 'DepD' ");
+			st = conn.prepareStatement("UPDATE department SET Name = ? WHERE Id = ? ");
 			
-			st.setInt(1, obj.getId());
-			st.setString(2, obj.getName());
-			//st.setString(3, obj.getName()); ---ATENÇÃO--VERIFICAR COMO O PROFESSOR RESOLVEU O 'WHERE NAME = ?'
-			
+			st.setString(1, obj.getName());
+			st.setInt(2, obj.getId());
+						
 			st.executeUpdate();
 			
 		}

@@ -16,12 +16,9 @@ public class Program2 {
 		
 		System.out.println("=== TEST 1: Department findById ===");
 		Department department = departmentDao.findById(2);
-		
 		System.out.println(department);
 		
 		System.out.println("\n=== TEST 2: Department findAll ===");
-		
-		//List<Seller> list = sellerDao.findByDepartment(department);
 		List<Department> list = departmentDao.findAll();
 		
 		for(Department obj : list) {
@@ -30,12 +27,12 @@ public class Program2 {
 				
 		System.out.println("\n=== TEST 3: Department insert ===");
 		Department dep = new Department(null, "Gamers");
-		//departmentDao.insert(dep);
+		departmentDao.insert(dep);
 		System.out.println("Inserted! New id = " + dep.getId());
 				
 		System.out.println("\n=== TEST 4: Department update ===");
 		department = departmentDao.findById(5);
-		department.setName("DepE");
+		department.setName("DepF");
 		departmentDao.update(department);
 		System.out.println("Update completed!");
 		System.out.println(department);

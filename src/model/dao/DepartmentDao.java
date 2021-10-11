@@ -11,6 +11,4 @@ public interface DepartmentDao {
 	void deleteById(Integer id);
 	Department findById(Integer id); //pegar o id e consultar no banco o id
 	List<Department> findAll();
-	
-
 }

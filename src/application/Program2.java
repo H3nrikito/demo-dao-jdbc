@@ -1,5 +1,6 @@
 package application;
 
+import java.util.List;
 import java.util.Scanner;
 
 import model.dao.DaoFactory;
@@ -14,11 +15,19 @@ public class Program2 {
 		DepartmentDao departmentDao = DaoFactory.createDepartmentDao(); //injeção de dependencia
 		
 		System.out.println("=== TEST 1: Department findById ===");
-		Department department = departmentDao.findById(3);
+		Department department = departmentDao.findById(2);
 		
 		System.out.println(department);
 		
-		//System.out.println("\n=== TEST 2: Department findById ===");
+		System.out.println("\n=== TEST 2: Department findAll ===");
+		
+		//List<Seller> list = sellerDao.findByDepartment(department);
+		List<Department> list = departmentDao.findAll();
+		
+		for(Department obj : list) {
+			System.out.println(obj); 
+		}
+		
 		
 		
 		//System.out.println("\n=== TEST 3: Department findAll ===");

@@ -27,15 +27,12 @@ public class Program2 {
 		for(Department obj : list) {
 			System.out.println(obj); 
 		}
-		
-		
-		
-		//System.out.println("\n=== TEST 3: Department findAll ===");
-		
-		
-		//System.out.println("\n=== TEST 4: Department insert ===");
-		
-		
+				
+		System.out.println("\n=== TEST 3: Department insert ===");
+		Department dep = new Department(null, "Gamers");
+		departmentDao.insert(dep);
+		System.out.println("Inserted! New id = " + dep.getId());
+				
 		//System.out.println("\n=== TEST 5: Department update ===");
 		
 		

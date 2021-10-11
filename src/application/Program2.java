@@ -40,11 +40,13 @@ public class Program2 {
 		System.out.println("Update completed!");
 		System.out.println(department);
 		
-		//System.out.println("\n=== TEST 6: Department delete ===");
+		System.out.println("\n=== TEST 5: Department delete ===");
+		System.out.print("Enter id for delete: ");
+		int id = sc.nextInt();
+		departmentDao.deleteById(id);
+		System.out.println("Delete completed!");
 		
-		//System.out.println("Delete completed!");
-		
-		
+				
 		sc.close();
 	}
 }
